@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocmaz, Raionul Ștefan Vodă</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary: #2d6a4f;     
+            --secondary: #40916c;   
+            --accent: #d4a373;      
+            --background: #f4f1de;  
+            --surface: #ffffff;     
+            --text-main: #212529;   
+            --text-light: #495057; 
+            --border: #e9ecef;
+
+            
+            --font-h1: 2.5rem;
+            --font-h2: 2rem;
+            --font-h3: 1.6rem;
+            --font-h4: 1.25rem;
+            --font-p: 1rem;
+
+            --font-heading: 'Merriweather', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6; 
+            font-size: var(--font-p);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        h3 { font-size: var(--font-h3); }
+        h4 { font-size: var(--font-h4); }
+
+        p { margin-bottom: 1rem; }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover { color: var(--accent); }
+
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: var(--font-h2);
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 500;
+        }
+
+       
+        .hero {
+            background: linear-gradient(rgba(45, 106, 79, 0.8), rgba(45, 106, 79, 0.6)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 2rem;
+        }
+
+        
+        main {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        aside {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .widget {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .widget:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .widget ul {
+            list-style-type: none;
+        }
+
+        .widget li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        
+        footer {
+            background-color: var(--text-main);
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr; 
+            }
+        }
+
+       
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 3fr 1fr; 
+                gap: 3rem;
+            }
+            .hero { padding: 6rem 5%; }
+        }
+
+
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            :root {
+                --font-h1: 2rem;
+                --font-h2: 1.5rem;
+            }
+            main, aside { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <div class="header-container">
+            <div class="logo">Crocmaz</div>
+            <nav>
+                <ul>
+                    <li><a href="#acasa">Acasă</a></li>
+                    <li><a href="#istoric">Istoric</a></li>
+                    <li><a href="#geografie">Geografie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero" id="acasa">
+        <h1>Localitatea Crocmaz</h1>
+        <p>O perlă pitorească pe malul Nistrului, Raionul Ștefan Vodă</p>
+    </div>
+
+   
+    <div class="container">
+        
+        <main>
+            
+            <article id="istoric">
+                <h2>Istorie și Tradiție</h2>
+                
+                
+                <picture>
+                    <source srcset="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80&fm=webp" type="image/webp">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Peisaj de toamnă reprezentativ" loading="lazy">
+                </picture>
+
+                <p>Satul <strong>Crocmaz</strong> este o localitate încărcată de istorie, situată în raionul Ștefan Vodă, în partea de sud-est a Republicii Moldova. Așezat strategic în apropierea fluviului Nistru, satul a fost de-a lungul secolelor un punct important de intersecție a culturilor și un leagăn al agriculturii fertile.</p>
+                
+                <p>Prima atestare documentară a localității aduce în prim-plan o comunitate strâns legată de pământ și de viticultură, regiunea Ștefan Vodă fiind renumită la nivel internațional pentru vinurile sale (aflându-se în proximitatea zonei Purcari).</p>
+
+                <h3>Un tărâm pitoresc</h3>
+                <p>Crocmazul se distinge prin peisajele sale naturale deosebite, luncile inundabile ale Nistrului oferind un habitat perfect pentru o faună și floră diversificată. Locuitorii păstrează cu sfințenie tradițiile seculare, portul popular și meșteșugurile fiind încă vii în cadrul sărbătorilor locale.</p>
+            </article>
+        </main>
+
+        <aside>
+            <div class="widget">
+                <h3>Informații Rapide</h3>
+                <ul>
+                    <li><strong>Țară:</strong> <span>Moldova</span></li>
+                    <li><strong>Raion:</strong> <span>Ștefan Vodă</span></li>
+                    <li><strong>Prima atestare:</strong> <span>sec. XVI</span></li>
+                    <li><strong>Populație:</strong> <span>~2,600 loc.</span></li>
+                    <li><strong>Fus orar:</strong> <span>EET (UTC+2)</span></li>
+                </ul>
+            </div>
+
+            <div class="widget" id="geografie">
+                <h3>Așezare Geografică</h3>
+                <p>Localitatea se află la o altitudine pitorească de-a lungul râului Nistru. Solurile de cernoziom extrem de fertile fac din această zonă un loc ideal pentru cultivarea viței de vie, a livezilor de piersici și a culturilor cerealiere.</p>
+            </div>
+            
+            <div class="widget">
+                <h3>Atracții Locale</h3>
+                <ul>
+                    <li>Lunca Nistrului</li>
+                    <li>Biserica din localitate</li>
+                    <li>Cramele din regiune</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+   
+    <footer id="contact">
+        <h4>Primăria Crocmaz</h4>
+        <p>Raionul Ștefan Vodă, Republica Moldova</p>
+        <p style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+            &copy; 2024 Site-ul informativ Crocmaz. Proiect Educațional.
+        </p>
+    </footer>
+
+</body>
+</html>
